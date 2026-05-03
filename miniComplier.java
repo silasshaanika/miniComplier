@@ -84,7 +84,7 @@ public class miniComplier {
         System.out.println("============================================================");
     }
 
-    // LEXICAL ANALYSIS
+    // LEXICAL ANALYSIS           
     public static void lexicalAnalysis(String line) {
         System.out.println(" Lexical Analysis:");
 
@@ -97,7 +97,7 @@ public class miniComplier {
             if (token.isEmpty()) continue;
 
             if (isKeyword(token)) {
-                System.out.println("  '" + token + "' --> KEYWORD");
+                System.out.println("  '" + token + "' --> KEYWORD"); 
             } else if (isInvalidKeyword(token)) {
                 System.out.println("  '" + token + "' --> LEXICAL ERROR (misspelled/unknown keyword)");
                 hasError = true;
@@ -112,7 +112,7 @@ public class miniComplier {
                 System.out.println("  '" + token + "' --> LEXICAL ERROR (unrecognized token)");
                 hasError = true;
                 break;
-            }
+            }   
         }
 
         if (hasError) {
@@ -145,7 +145,7 @@ public class miniComplier {
         return true;
     }
     
-    // STAGE 2: SYNTAX ANALYSIS
+    // STAGE 2: SYNTAX ANALYSIS      
     public static void syntaxAnalysis(String line) {
         System.out.println("[STAGE 2] Syntax Analysis:");
 
@@ -172,7 +172,7 @@ public class miniComplier {
             System.out.println("  Result: Syntax Error detected!, Compilation stopped for this line.");
             return;
         }
-
+                           
         System.out.println("  Result: Syntax Analysis PASSED");
         semanticAnalysis(line);
     }
@@ -213,7 +213,7 @@ public class miniComplier {
         System.out.println("  Result: Semantic Analysis PASSED");
 
 
-        
+
         if (isValidLine(line)) {
             intermediateCode(line);
         } else {
@@ -233,7 +233,7 @@ public class miniComplier {
         return true;
     }
 
-    // INTERMEDIATE CODE REPRESENTATION (ICR)
+    // INTERMEDIATE CODE REPRESENTATION (ICR)           // LET G = a + c
     public static void intermediateCode(String line) {
         System.out.println("[STAGE 4] Intermediate Code Representation (ICR):");
 
